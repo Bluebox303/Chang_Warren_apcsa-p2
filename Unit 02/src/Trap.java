@@ -4,10 +4,10 @@
 //Class -
 //Lab  - 
 
-public class Cone
+public class Trap
 {
-	public static double volume( double radius, int height)
-	{		
+	public static double area( int base1, int base2, int height )
+	{
 		return 0;
 	}
 }
