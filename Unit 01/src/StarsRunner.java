@@ -14,6 +14,8 @@ public class StarsRunner
    {
       //instantiate a StarsAndStripes object
       
+	   
+	   ref.printTwentyStars();
       //call the methods needed to make the patterns on the word document
       
    }
