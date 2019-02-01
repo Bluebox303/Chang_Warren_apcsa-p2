@@ -18,21 +18,26 @@ public class StarsAndStripes
 
    public void printTwentyStars()
    {
+	   
    }
 
    public void printTwentyDashes()
    {
+	   
    }
 
    public void printTwoBlankLines()
    {
+	   
    }
    
    public void printASmallBox()
    {	
+	   
    }
  
    public void printABigBox()
    { 	
+	   
    }   
 }
