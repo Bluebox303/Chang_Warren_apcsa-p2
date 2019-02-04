@@ -14,7 +14,15 @@ public class DistanceRunner
 {
 	public static void main( String[] args )
 	{
-		//add test cases	
-			
+		Distance ref = new Distance();
+		
+		//add test cases
+		ref.setCoordinates(0, 0, 0, 0);
+		ref.calcDistance();
+		ref.getDistance();
+		ref.print();
+		ref.toString();
+
+		
 	}
 }
