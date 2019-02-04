@@ -13,12 +13,12 @@ import static java.lang.Math.*;
 public class Distance
 {
 	private int xOne,yOne,xTwo,yTwo;
-	private double distance;
+	private float distance;
 
 	public Distance()
 	{
 		//instantiation of variable distance
-		double distance = 0; 	
+		float distance = 0; 	
 				
 	}
 
@@ -36,24 +36,25 @@ public class Distance
 		Scanner asdf = new Scanner(System.in);
 		
 		out.println("Enter X1 :: ");
-		x1 = Integer.parseInt(asdf.next());
+		xOne = x1 = Integer.parseInt(asdf.next());
 		
 		out.println("Enter X2 :: ");
-		x2 = Integer.parseInt(asdf.next());
+		xTwo = x2 = Integer.parseInt(asdf.next());
 		
 		out.println("Enter Y1 :: ");
-		y1 = Integer.parseInt(asdf.next());
+		yOne = y1 = Integer.parseInt(asdf.next());
 		
 		out.println("Enter Y2 :: ");
-		y2 = Integer.parseInt(asdf.next());
+		yTwo = y2 = Integer.parseInt(asdf.next());
 	}
 
 	public void calcDistance()
 	{
-		distance = sqrt((xTwo-xOne)^2+(yTwo-yOne)^2);
+		float num = ((xTwo-xOne)*(xTwo-xOne)+(yTwo-yOne)*(yTwo-yOne))^(1/2);
+		distance = num;
 	}
 	
-	public double getDistance()
+	public float getDistance()
 	{
 		
 		return distance;
