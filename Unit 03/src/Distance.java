@@ -12,49 +12,52 @@ import static java.lang.Math.*;
 
 public class Distance
 {
-	private int xOne,yOne,xTwo,yTwo;
-	private float distance;
+	private double xOne,yOne,xTwo,yTwo;
+	private double distance;
 
 	public Distance()
 	{
-		//instantiation of variable distance
-		float distance = 0; 	
+		double distance = 0; 	
 				
 	}
 
-	public Distance(int x1, int y1, int x2, int y2)
+	public Distance(double x1, double y1, double x2, double y2)
 	{
-		//instantiation of variables
 		x1 = 0;
 		x2 = 0;
 		y1 = 0;
 		y2 = 0;
 	}
 
-	public void setCoordinates(int x1, int y1, int x2, int y2)
+	public void setCoordinates(double x1, double y1, double x2, double y2)
 	{
 		Scanner asdf = new Scanner(System.in);
 		
 		out.println("Enter X1 :: ");
-		xOne = x1 = Integer.parseInt(asdf.next());
-		
-		out.println("Enter X2 :: ");
-		xTwo = x2 = Integer.parseInt(asdf.next());
+		xOne = x1 = Double.parseDouble(asdf.next());
+		out.println(x1 +" || "+xOne);
 		
 		out.println("Enter Y1 :: ");
-		yOne = y1 = Integer.parseInt(asdf.next());
+		yOne = y1 = Double.parseDouble(asdf.next());
+		out.println(y1 +" || "+yOne);
+		
+		out.println("Enter X2 :: ");
+		xTwo = x2 = Double.parseDouble(asdf.next());
+		out.println(x2 +" || "+xTwo);
 		
 		out.println("Enter Y2 :: ");
-		yTwo = y2 = Integer.parseInt(asdf.next());
+		yTwo = y2 = Double.parseDouble(asdf.next());
+		out.println(y2 +" || "+yTwo);
 	}
 
 	public void calcDistance()
 	{
-		float num = ((xTwo-xOne)*(xTwo-xOne)+(yTwo-yOne)*(yTwo-yOne))^(1/2);
+		double num = (xTwo-xOne)*(xTwo-xOne)+(yTwo-yOne)*(yTwo-yOne);
+		num = Math.sqrt(num);
 		distance = num;
 	}
 	
-	public float getDistance()
+	public double getDistance()
 	{
 		
 		return distance;
@@ -62,14 +65,7 @@ public class Distance
 	
 	public void print()
 	{
-		out.println(distance);
+		out.println("distance == "+distance);
 	}
 	
-	//complete print or the toString
-
-	public String toString()
-	{
-		return "";
-		//out.println("distance == "+distance);
-	}
 }
