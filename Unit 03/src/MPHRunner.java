@@ -25,11 +25,13 @@ public class MPHRunner
 		out.print("Enter the minutes :: ");
 		int mins = keyboard.nextInt();
 
-		MilesPerHour test = new MilesPerHour(dist, hrs, mins);
-		test.calcMPH();
-		test.print();
+		MilesPerHour gacheebas = new MilesPerHour(dist, hrs, mins);
+		gacheebas.setNums(dist,hrs,mins);
+		gacheebas.calcMPH();
+		gacheebas.toString();
+		gacheebas.print();
 		
-		//add more test cases
+		
 		
 		
 	}
