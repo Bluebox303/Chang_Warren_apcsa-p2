@@ -14,10 +14,10 @@ public class DiscountRunner
 	public static void main( String args[] )
 	{
 		Scanner keyboard = new Scanner(System.in);
-		
 		out.print("Enter the original bill amount :: ");
 		double amt = keyboard.nextDouble();
+		amt = Discount.getDiscountedBill(amt);
+		System.out.println("Bill after discount :: " + amt);
 		
-
 	}
 }
