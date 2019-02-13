@@ -14,18 +14,24 @@ public class StringEquality
 
 	public StringEquality()
 	{
+		//call set
+		setWords("","");
 	}
 
 	public StringEquality(String one, String two)
 	{
+		
 	}
 
 	public void setWords(String one, String two)
 	{
+		
 	}
 
 	public boolean checkEquality( )
 	{
+		
+		
 		return false;
 	}
 
