@@ -13,13 +13,16 @@ public class RPSRunner
 		char response;
 		
 		//add in a do while loop after you get the basics up and running
-		do
-		{
+		do{
 			System.out.print("Rock-Paper-Scissors - select your weapon[R,P,S]::");
-			 String player = keyboard.next();
+			String player = keyboard.next();
 			RockPaperScissors test = new RockPaperScissors(player);
-			 System.out.println("player had "+ player);
-			 System.out.println(test.determineWinner()+"\n");
+			//test.RockPaperScissors(player);
+			test.setPlayers(player);
+			
+			System.out.println("player had "+ player);
+			System.out.println("computer had "+  );
+			System.out.println(test.determineWinner()+"\n");
 			 //System.out.println(test);
 			
 			System.out.print("Do you want to play again? ");
