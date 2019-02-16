@@ -21,7 +21,7 @@ public class RPSRunner
 			test.setPlayers(player);
 			
 			System.out.println("player had "+ player);
-			System.out.println("computer had "+  );
+			System.out.println("computer had "+ player);
 			System.out.println(test.determineWinner()+"\n");
 			 //System.out.println(test);
 			
