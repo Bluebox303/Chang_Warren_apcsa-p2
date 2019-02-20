@@ -46,6 +46,38 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0)
+				{
+			response = "Tell me more about your pets";
+				}
+		else if (findKeyword(statement, "Mauro") >= 0 
+				|| findKeyword(statement, "mauro") >= 0)
+		{
+			response = "Your teacher sounds like a pop.";
+		}
+		//additional keyword/response pair one
+		else if (findKeyword(statement, "friend") >= 0
+				|| findKeyword(statement, "people") >= 0)
+		{
+			response = "What a sociable individual.";
+		}
+		//additional keyword/response pair two
+		else if (findKeyword(statement, "school") >= 0 
+				|| findKeyword(statement, "grades") >= 0 
+				|| findKeyword(statement, "student") >= 0)
+		{
+			response = "It doesn't seem like you're doing bad academically.";
+		}
+		//additional keyword/response pair three
+		else if (findKeyword(statement, "yes") >= 0)
+		{
+			response = "I always appreciate enthusiasm.";
+		}
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "What's with the negativity?";
+		}
 		else
 		{
 			response = getRandomResponse();

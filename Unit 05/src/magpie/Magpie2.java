@@ -32,9 +32,8 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
-		{
-			response = "Why so negative?";
+		if (statement.length() <= 0) {
+			response = "Say something, por favor.";
 		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
@@ -42,6 +41,38 @@ public class Magpie2
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0)
+				{
+			response = "Tell me more about your pets";
+				}
+		else if (statement.indexOf("Mauro") >= 0 
+				|| statement.indexOf("mauro") >= 0)
+		{
+			response = "Your teacher sounds like a pop.";
+		}
+		//additional keyword/response pair one
+		else if (statement.indexOf("friend") >= 0
+				|| statement.indexOf("people") >= 0)
+		{
+			response = "What a sociable individual.";
+		}
+		//additional keyword/response pair two
+		else if (statement.indexOf("school") >= 0 
+				|| statement.indexOf("grades") >= 0 
+				|| statement.indexOf("student") >= 0)
+		{
+			response = "It doesn't seem like you're doing bad academically.";
+		}
+		//additional keyword/response pair three
+		else if (statement.indexOf("yes") >= 0)
+		{
+			response = "I always appreciate enthusiasm.";
+		}
+		else if (statement.indexOf("no") >= 0)
+		{
+			response = "What's with the negativity?";
 		}
 		else
 		{
@@ -56,7 +87,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -67,15 +98,23 @@ public class Magpie2
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "Huh.";
 		}
 		else if (whichResponse == 2)
 		{
-			response = "Do you really think so?";
+			response = "Is that what you really think?";
 		}
 		else if (whichResponse == 3)
 		{
-			response = "You don't say.";
+			response = "Really now.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "That never crossed my mind.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "Ha! You actually made me laugh!";
 		}
 
 		return response;
