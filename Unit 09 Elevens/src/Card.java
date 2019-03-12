@@ -9,17 +9,14 @@ public class Card {
 	 * String value that holds the suit of the card
 	 */
 	private String suit;
-
 	/**
 	 * String value that holds the rank of the card
 	 */
 	private String rank;
-
 	/**
 	 * int value that holds the point value.
 	 */
 	private int pointValue;
-
 
    /**
 	 * Creates a new <code>Card</code> instance.
@@ -32,16 +29,17 @@ public class Card {
 	 *                  containing the point value of the card
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		suit = cardSuit;
+		rank = cardRank;
+		pointValue = cardPointValue;
 	}
-
 
 	/**
 	 * Accesses this <code>Card's</code> suit.
 	 * @return this <code>Card's</code> suit.
 	 */
 	public String suit() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return suit;
    }
 
 	/**
@@ -49,7 +47,7 @@ public class Card {
 	 * @return this <code>Card's</code> rank.
 	 */
 	public String rank() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return rank;
 	}
 
    /**
@@ -57,7 +55,7 @@ public class Card {
 	 * @return this <code>Card's</code> point value.
 	 */
 	public int pointValue() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return pointValue;
 	}
 
 	/** Compare this card with the argument.
@@ -67,7 +65,10 @@ public class Card {
 	 *         false otherwise.
 	 */
 	public boolean matches(Card otherCard) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	 if(otherCard.suit().equals(this.suit()) && otherCard.rank().equals(this.rank()) && otherCard.pointValue() == this.pointValue())
+	      return true;
+	    else
+	      return false;
 	}
 
 	/**
@@ -76,12 +77,11 @@ public class Card {
 	 * This provides a useful way of printing the contents
 	 * of a <code>Deck</code> in an easily readable format or performing
 	 * other similar functions.
-	 *
 	 * @return a <code>String</code> containing the rank, suit,
 	 *         and point value of the card.
 	 */
 	@Override
 	public String toString() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return rank + " of " + suit + " (point value of " + pointValue + ")";
 	}
 }
