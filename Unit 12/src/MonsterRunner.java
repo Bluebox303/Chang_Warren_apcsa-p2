@@ -12,11 +12,38 @@ public class MonsterRunner
 		Scanner keyboard = new Scanner(System.in);
 		
 		//ask for name and size
+		System.out.println("Monster 1 name: ");
+		String nameOne = keyboard.next();
+		System.out.println("Monster 1 size: ");
+		int sizeOne = keyboard.nextInt();
+		System.out.println("Monster 2 name: ");
+		String nameTwo = keyboard.next();
+		System.out.println("Monster 2 size: ");
+		int sizeTwo = keyboard.nextInt();
 		
 		//instantiate monster one
+		Skeleton monsterOne = new Skeleton(nameOne, sizeOne);
+		Skeleton monsterTwo = new Skeleton(nameTwo, sizeTwo);
 		
 		//ask for name and size
 		
 		//instantiate monster two
+		if (monsterOne.isBigger(monsterTwo))
+		{
+			System.out.println("Monster one is bigger than Monster two.");
+		}
+		else if (monsterOne.isSmaller(monsterTwo))
+		{
+			System.out.println("Monster one is smaller than Monster two.");
+		}
+		
+		if(monsterOne.namesTheSame(monsterTwo))
+		{
+			System.out.println("Monster one and Monster two's name are the same.");
+		}
+		else
+		{
+			System.out.println("Monster one doesn't have the same name as Monster two.");
+		}
 	}
 }
