@@ -11,5 +11,8 @@ public class Recursion234Runner
 		System.out.println(RecursionFunOne.countOddDigits(4532));
 
 		//add more test cases
+		System.out.println(RecursionFunOne.countOddDigits(45747456));
+		System.out.println(RecursionFunThree.luckyThrees(5783432));
+		System.out.println(RecursionFunThree.luckyThrees(33333));
 	}
 }
