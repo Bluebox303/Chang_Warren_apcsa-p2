@@ -15,12 +15,36 @@ public class NumberSorter
 	private static int getNumDigits(int number)
 	{
 		int count = 0;
+		while (number > 0) 
+		{
+			number /= 10;
+			count = count+1;
+		}
 		return count;
 	}
 
 	public static int[] getSortedDigitArray(int number)
 	{
-		int[] sorted = null;
+		int[] sorted = new int[getNumDigits(number)];
+		int index = 0;
+		int num = number;
+		while (num > 0) 
+		{
+			sorted[index] = num%10;
+			num /= 10;
+			index = index+1;
+		}
+		int i = 1;
+		while (i < sorted.length) {
+			int j = i; 
+			while (j > 0 && sorted[j-1] > sorted[j]) {
+				int temp = sorted[j-1];
+				sorted[j-1] = sorted[j];
+				sorted[j] = temp;
+				j=j-1;
+			}
+			i=i+1;
+		}
 		return sorted;
 	}
 }
