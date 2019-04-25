@@ -92,6 +92,14 @@ public class PictureTester
 	  gulls.explore();
   }
   
+  /** Method to test the mirrorGull method */
+  public static void testMirrorGull() {
+	  Picture mgulls = new Picture("src/images/seagull.jpg");
+	  mgulls.explore();
+	  mgulls.mirrorGull();
+	  mgulls.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -141,12 +149,12 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
