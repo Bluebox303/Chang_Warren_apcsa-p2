@@ -20,7 +20,7 @@ public class Block implements Locatable
 		yPos=150;
 		width=10;
 		height=10;
-		color=Color.BLACK;
+		color=Color.RED;
 
 	}
 

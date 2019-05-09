@@ -24,7 +24,7 @@ public class Paddle extends Block
 	   super(x,y);
 	   setWidth(10);
 	   setHeight(10);
-	   setColor(Color.BLACK);
+	   setColor(Color.RED);
 	   speed = 5;
    }
    public Paddle (int x, int y, int s)
@@ -33,7 +33,7 @@ public class Paddle extends Block
 	   speed = s;
 	   setWidth(10);
 	   setHeight(10);
-	   setColor(Color.BLACK);
+	   setColor(Color.RED);
    }
    public Paddle(int x, int y, int w, int h)
    {
@@ -43,12 +43,16 @@ public class Paddle extends Block
    {
 	   super(x,y,w,h);
 	   speed = s;
-	   setColor(Color.BLACK);
+	   setColor(Color.RED);
    }
    public Paddle(int x, int y, int w, int h, Color c, int s)
    {
 	   super(x,y,w,h,c);
 	   speed = s;
+   }
+   public void setSpeed(int spd) 
+   {
+	   speed = spd;
    }
    public void moveUpAndDraw(Graphics window)
    {
