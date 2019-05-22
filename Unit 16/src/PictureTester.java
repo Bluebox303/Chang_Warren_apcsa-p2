@@ -136,14 +136,14 @@ public class PictureTester
   public static void testEncode()
   {
 	    Picture msg = new Picture("src/images/msg.jpg");
+	    Picture key = new Picture("src/images/beach.jpg");
 	    msg.explore();
 	    Picture beach = new Picture("src/images/beach.jpg");
 	    beach.explore();
-	    Picture message = new Picture("src/images/msg.jpg");
-        beach.encode( message );
+        beach.encode(new Picture("src/images/msg.jpg"));
         beach.explore();
-        Picture decoded = beach.decode();
-        decoded.explore();
+        beach.decode();
+        beach.explore();
 	  }
   
   /** Main method for testing.  Every class can have a main

@@ -553,49 +553,45 @@ public class Picture extends SimplePicture
       Pixel[][] currPixels = this.getPixels2D();
       Pixel currPixel = null;
       Pixel msgPixel = null;
-      for (int row=0; row<this.getHeight(); row++)
+      for (int row=0; row<currPixels.length; row++)
       {
-          for (int col=0; col<this.getWidth(); col++)
+          for (int col=0; col<currPixels[row].length; col++)
           {
-              currPixel = currPixels[row][col];
-              if (currPixel.getBlue()%2 == 1)
-              {
-                  currPixel.setBlue(currPixel.getBlue()+1);
-              }
               msgPixel = msgPixels[row][col];
-              if (msgPixel.colorDistance(Color.BLACK)<40)
+              currPixel = currPixels[row][col];
+              if (currPixel.getBlue()%2!=0)
               {
-                  currPixels[row][col].setBlue(currPixels[row][col].getBlue() + 1);
+            	  currPixels[row][col].setBlue(currPixel.getBlue()+1);
+              }
+              if (msgPixel.getBlue()<=10 || msgPixel.getRed()<=10)
+              {
+                  currPixels[row][col].setBlue(currPixel.getBlue()+3);
               }
           }
       }
   }
   public Picture decode()
   {
-      Pixel[][] pixels = this.getPixels2D();
-      int height = this.getHeight();
-      int width = this.getWidth();
+      Pixel[][] currPixels = this.getPixels2D();
       Pixel currPixel = null;
-      Pixel msgPixel = null;
-      Picture msgpic = new Picture(height, width);
-      Pixel[][] msgPixels = msgpic.getPixels2D();
-      for (int row = 0; row<this.getHeight(); row++)
+      int Blueval = 0;
+      for (int row = 0; row<currPixels.length; row++)
       {
-          for (int col = 0; col<this.getWidth(); col++)
+          for (int col = 0; col<currPixels[row].length; col++)
           {
-              currPixel = pixels[row][col];
-              msgPixel = msgPixels[row][col];
-              if (currPixel.getBlue()%2 >= 1)
+              currPixel = currPixels[row][col];
+        	  Blueval = currPixel.getBlue();
+              if (Blueval%2!=0)
               {
-            	  msgPixel.setColor(Color.RED);
+            	  currPixel.setColor(Color.RED);
               }
               else
               {
-            	  msgPixel.setColor(Color.BLACK);
+            	  currPixel.setColor(Color.BLACK);
               }
           }
       }
-      return msgpic;
+      return this;
   }
   
   /* Main method for testing - each class in Java can have a main 
