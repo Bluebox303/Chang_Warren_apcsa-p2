@@ -132,6 +132,20 @@ public class PictureTester
 	  swan.explore();
   }
   
+  /** Method to test encoding */
+  public static void testEncode()
+  {
+	    Picture msg = new Picture("src/images/msg.jpg");
+	    msg.explore();
+	    Picture beach = new Picture("src/images/beach.jpg");
+	    beach.explore();
+	    Picture message = new Picture("src/images/msg.jpg");
+        beach.encode( message );
+        beach.explore();
+        Picture decoded = beach.decode();
+        decoded.explore();
+	  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -149,7 +163,7 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
@@ -161,5 +175,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  
+	  testEncode();
   }
 }

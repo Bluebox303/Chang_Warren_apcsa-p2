@@ -545,8 +545,58 @@ public class Picture extends SimplePicture
       else if (a > 255) return 255;
       else              return a;
   }
-  
-  
+
+ //Picture Lab Extension Methods
+  public void encode(Picture msg)
+  {
+      Pixel[][] msgPixels = msg.getPixels2D();
+      Pixel[][] currPixels = this.getPixels2D();
+      Pixel currPixel = null;
+      Pixel msgPixel = null;
+      for (int row=0; row<this.getHeight(); row++)
+      {
+          for (int col=0; col<this.getWidth(); col++)
+          {
+              currPixel = currPixels[row][col];
+              if (currPixel.getBlue()%2 == 1)
+              {
+                  currPixel.setBlue(currPixel.getBlue()+1);
+              }
+              msgPixel = msgPixels[row][col];
+              if (msgPixel.colorDistance(Color.BLACK)<40)
+              {
+                  currPixels[row][col].setBlue(currPixels[row][col].getBlue() + 1);
+              }
+          }
+      }
+  }
+  public Picture decode()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      int height = this.getHeight();
+      int width = this.getWidth();
+      Pixel currPixel = null;
+      Pixel msgPixel = null;
+      Picture msgpic = new Picture(height, width);
+      Pixel[][] msgPixels = msgpic.getPixels2D();
+      for (int row = 0; row<this.getHeight(); row++)
+      {
+          for (int col = 0; col<this.getWidth(); col++)
+          {
+              currPixel = pixels[row][col];
+              msgPixel = msgPixels[row][col];
+              if (currPixel.getBlue()%2 >= 1)
+              {
+            	  msgPixel.setColor(Color.RED);
+              }
+              else
+              {
+            	  msgPixel.setColor(Color.BLACK);
+              }
+          }
+      }
+      return msgpic;
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
